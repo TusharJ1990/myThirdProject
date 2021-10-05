@@ -5,11 +5,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d5799923-5243-4e3f-ba25-25c1090c5dcc" >
-		<http:listener-connection host="0.0.0.0" port="8089" />
+		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<flow name="mythirdprojectFlow" doc:id="88efa2e6-5ad9-4266-9683-39404aa27f1b" >
 		<http:listener doc:name="Listener" doc:id="cd37aaeb-d454-42c5-9556-ea7cb90a44ce" config-ref="HTTP_Listener_config" path="/sample"/>
 		<logger level="INFO" doc:name="Logger" doc:id="2c4f92b5-9dc5-4c77-a0a5-5317a2cd0b6e" message="Inside logger"/>
-		<set-payload value='{&#10;	"msg" : "Hello World-Jenkins CICD Demo with settings.xml"&#10;}' doc:name="Set Payload" doc:id="fac225cc-ae00-48ba-9db6-d09f50655d05" mimeType="application/json"/>
+		<set-payload value='{
+&#10;	"msg" : "Hello World-Jenkins CICD Demo with settings.xml"
+&#10;}' doc:name="Set Payload" doc:id="fac225cc-ae00-48ba-9db6-d09f50655d05" mimeType="application/json"/>
 	</flow>
 </mule>
